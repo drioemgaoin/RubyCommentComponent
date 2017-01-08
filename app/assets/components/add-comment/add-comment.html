@@ -3,23 +3,23 @@
   <template>
     <h2>Add comment</h2>
 
-    <form method="post">
+    <form is="iron-form" id="form" method="post" action="http://localhost:3000/comments">
       <div class="field">
         <label for="username">Username:</label>
-        <input id="username" type="text" />
+        <input id="username" name="comment[username]" type="text" />
       </div>
 
       <div class="field">
         <label for="email">Email:</label>
-        <input id="email" type="text" />
+        <input id="email" name="comment[email]" type="text" />
       </div>
 
       <div class="field">
         <label for="content">Content:</label>
-        <input id="content" type="text" />
+        <input id="content" name="comment[content]" type="text" />
       </div>
 
-      <input type="submit" value="Ok" />
+      <button>Ok</button>
     </form>
   </template>
 
