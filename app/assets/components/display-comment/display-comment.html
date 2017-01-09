@@ -2,14 +2,23 @@
   <link rel="stylesheet" href="display-comment.css" />
   <template>
     <template is="dom-repeat" items="[[comments]]">
-            <span>{{item.username}}</span>
-        </template>
+        <div class="comment">
+          <img alt="Avatar" />
+          <div class="comment-body">
+            <div class="comment-infos">
+              <span class="username">{{item.username}}</span>
+              <span class="created-at">{{item.created_at}}</span>
+            </div>
+            <textarea readonly>{{item.content}}</textarea>
+          </div>
+        </div>
+    </template>
 
-        <iron-ajax
-            id="requestComments"
-            handle-as="json"
-            on-response="handleResponse">
-        </iron-ajax>
+    <iron-ajax
+        id="requestComments"
+        handle-as="json"
+        on-response="handleResponse">
+    </iron-ajax>
   </template>
 
   <script src="display-comment.js"></script>

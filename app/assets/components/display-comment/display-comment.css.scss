@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  background: var(--add-comment-background);
+  width: var(--add-comment-width);
+  padding: 15px;
+
+  .comment {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    -webkit-flex-direction: row; /* Safari */
+    flex-direction: row;
+
+    &:not(:first-of-type) {
+      margin-top: 50px;
+    }
+
+    img {
+      align-self: flex-start;
+      height: 50px;
+      width: 50px;
+    }
+
+    .comment-body {
+      display: -webkit-flex; /* Safari */
+      display: flex;
+      -webkit-flex-direction: column; /* Safari */
+      flex-direction: column;
+      margin-left: 10px;
+      width: 100%;
+
+      .comment-infos {
+        display: -webkit-flex; /* Safari */
+        display: flex;
+        -webkit-flex-direction: row; /* Safari */
+        flex-direction: row;
+        justify-content: space-between;
+        height: 30px;
+      }
+
+      textarea {
+        height: 150px;
+        resize: none;
+        outline: 0;
+      }
+    }
+  }
+}
