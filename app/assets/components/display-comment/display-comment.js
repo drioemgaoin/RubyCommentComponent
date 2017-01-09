@@ -2,6 +2,7 @@ Polymer({
   is: "display-comment",
   properties: {
     apiUrl: String,
+    genericAvatar: String,
     items: {
       comments: Array
     }

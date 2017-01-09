@@ -3,7 +3,7 @@
   <template>
     <template is="dom-repeat" items="[[comments]]">
         <div class="comment">
-          <img alt="Avatar" />
+         <img class="avatar" src="{{genericAvatar}}"></img>
           <div class="comment-body">
             <div class="comment-infos">
               <span class="username">{{item.username}}</span>

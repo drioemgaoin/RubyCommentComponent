@@ -14,10 +14,13 @@
       margin-top: 50px;
     }
 
-    img {
-      align-self: flex-start;
-      height: 50px;
-      width: 50px;
+    .avatar {
+      border-radius: 50%;
+  		width: 40px;
+  		height: 40px;
+      margin: 0 16px 0 0;
+  		background-size: contain;
+  		position: relative;
     }
 
     .comment-body {
