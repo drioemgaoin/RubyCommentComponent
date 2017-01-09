@@ -1,0 +1,16 @@
+<dom-module id="display-comment">
+  <link rel="stylesheet" href="display-comment.css" />
+  <template>
+    <template is="dom-repeat" items="[[comments]]">
+            <span>{{item.username}}</span>
+        </template>
+
+        <iron-ajax
+            id="requestComments"
+            handle-as="json"
+            on-response="handleResponse">
+        </iron-ajax>
+  </template>
+
+  <script src="display-comment.js"></script>
+</dom-module>

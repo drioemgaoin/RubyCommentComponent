@@ -1,4 +1,9 @@
 :host {
+  display: block;
+  background: var(--add-comment-background);
+  width: var(--add-comment-width);
+  padding: 15px;
+
   form {
     display: -webkit-flex; /* Safari */
     display: flex;
@@ -14,14 +19,19 @@
       align-items: center;
 
       label {
-        width: 80px;
+        width: 90px;
       }
 
       input {
-        height: 35px;
+        height: 25px;
       }
 
-      &:not(.no-space) > *:not([type=hidden]) ~ * {
+      textarea {
+        height: 150px;
+        resize: none;
+      }
+
+      & > *:not([type=hidden]) ~ * {
         margin-left: 10px;
         width: 100%;
       }
