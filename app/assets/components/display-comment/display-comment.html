@@ -2,16 +2,19 @@
   <link rel="stylesheet" href="display-comment.css" />
   <template>
     <template is="dom-repeat" items="[[comments]]">
-        <div class="comment">
-         <img class="avatar" src="{{genericAvatar}}"></img>
-          <div class="comment-body">
-            <div class="comment-infos">
-              <span class="username">{{item.username}}</span>
-              <span class="created-at">{{item.created_at}}</span>
-            </div>
-            <textarea readonly>{{item.content}}</textarea>
+      <div class="comment">
+       <img class="avatar" src="{{genericAvatar}}"></img>
+        <div class="comment-body">
+          <div class="comment-infos">
+            <span class="username">{{item.username}}</span>
+            <span class="created-at">{{item.created_at}}</span>
           </div>
+          <iron-autogrow-textarea
+            bind-value={{item.content}}
+            readonly>
+          </iron-autogrow-textarea>
         </div>
+      </div>
     </template>
 
     <iron-ajax
