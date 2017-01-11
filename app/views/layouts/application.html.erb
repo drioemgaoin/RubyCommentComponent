@@ -7,6 +7,15 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <style is="custom-style">
+      :root  {
+         --iron-autogrow-textarea: {
+            /*background: orange;*/
+            border: 1px solid red;
+            padding: 20px;
+         };
+      }
+    </style>
   </head>
   <body>
     <%= yield %>
