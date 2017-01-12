@@ -1,24 +1,22 @@
 :host {
   display: inline-block;
   position: relative;
-  /*border: 1px solid red;*/
-  /*outline: var(--iron-autogrow-textarea).border;*/
-  /*outline: 1px solid red;*/
-  /*padding: var(@apply(--iron-autogrow-textarea).padding);*/
-  /*var(--iron-autogrow-textarea).border: ;*/
+  overflow: hidden;
   -moz-appearance: textarea;
   -webkit-appearance: textarea;
-  overflow: hidden;
 }
 
 .mirror-text {
-  visibility: hidden;
-  word-wrap: break-word;
+  color: transparent;
+  @apply(--iron-autogrow-textarea);
 }
+
 .fit {
   @apply(--layout-fit);
 }
+
 textarea {
+  box-sizing: border-box;
   overflow: hidden;
   position: relative;
   outline: none;
@@ -34,6 +32,7 @@ textarea {
   text-align: inherit;
   @apply(--iron-autogrow-textarea);
 }
+
 ::content textarea:invalid {
   box-shadow: none;
 }
