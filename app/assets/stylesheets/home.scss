@@ -12,6 +12,14 @@ html {
 }
 
 body {
-  background-color: #fff;
-  min-height: 100%;
+    font-family: 'DejaVu Serif',sans-serif;
+    font-size: 15px;
+    background-color: #fff;
+    min-height: 100%;
+    background: #FF7668;
+    color: #fff;
+
+    h1 {
+      text-align: center;
+    }
 }
