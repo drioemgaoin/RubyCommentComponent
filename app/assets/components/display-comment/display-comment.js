@@ -1,17 +1,13 @@
 Polymer({
   is: "display-comment",
   properties: {
-    apiUrl: String,
     genericAvatar: String,
-    items: {
-      comments: Array
+    comments: {
+      type: Array,
+      notify: true
     }
   },
-  ready: function() {
-    this.$.requestComments.url = this.apiUrl + "/comments";
-    this.$.requestComments.generateRequest();
-  },
-  handleResponse: function (data) {
-      this.comments = data.detail.response;
+  add: function(comment) {
+    this.push('comments', comment);
   }
 });

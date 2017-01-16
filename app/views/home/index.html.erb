@@ -1,7 +1,8 @@
 <h1>User Comment Component</h1>
 
 <display-comment
-  api-url="http://localhost:3000" `
-  generic-avatar="<%= image_path 'generic-avatar.png' %>"></display-comment>
+  id="display-comment"
+  generic-avatar="<%= image_path 'generic-avatar.png' %>"
+  comments="<%= @comments %>"></display-comment>
 
 <add-comment api-url="http://localhost:3000"></add-comment>

@@ -1,0 +1,17 @@
+class CommentService
+  include HTTParty
+
+  base_uri "http://localhost:3000"
+
+  def get_all
+    comments = Array
+
+    response = self.class.get("/comments")
+    if response.success?
+      response.body
+    else
+      raise response.response
+    end
+  end
+
+end
