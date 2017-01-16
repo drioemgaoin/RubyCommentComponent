@@ -20,9 +20,9 @@
     <content></content>
 
     <iron-ajax
-        id="requestComments"
+        url$="[[action]]"
         handle-as="json"
-        on-response="handleResponse">
+        auto="true">
     </iron-ajax>
   </template>
 

@@ -6,19 +6,20 @@ Polymer({
       type: String,
       value: "actioncable"
     },
-    formatDate: String
+    formatDate: String,
+    action: {
+      type: String,
+      computed: '_getAction(url)'
+    }
   },
   listeners: {
-    'received': '_received'
-  },
-  ready: function() {
-    this.$.requestComments.url = this.url + "/comments";
-    this.$.requestComments.generateRequest();
+    'received': '_received',
+    'response': '_response'
   },
   _received: function(data) {
     this.push('comments', data.detail.comment);
   },
-  handleResponse: function (data) {
+  _response: function (data) {
     this.comments = data.detail.response;
   },
   _format: function(date) {
@@ -26,5 +27,8 @@ Polymer({
   },
   _getImage: function() {
     return this.resolveUrl('generic-avatar.png');
+  },
+  _getAction: function(url) {
+    return url + "/comments";
   }
 });
