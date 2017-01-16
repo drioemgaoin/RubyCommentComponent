@@ -1,4 +1,4 @@
-jQuery(document).on 'turbolinks:load', ->
+jQuery(document).on 'ready', ->
   App.comment = App.cable.subscriptions.create "CommentChannel",
     connected: ->
       # Called when the subscription is ready for use on the server
@@ -10,4 +10,4 @@ jQuery(document).on 'turbolinks:load', ->
 
     received: (data) ->
       # Called when there's incoming data on the websocket for this channel
-      document.getElementById("display-comment").add(data.comment)
+      $("#display-comment")[0].add(data.comment)

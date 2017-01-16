@@ -7,7 +7,7 @@
           <div class="comment-avatar"><img src$="[[genericAvatar]]" /></div>
           <div class="comment-infos">
             <span class="username">{{item.username}}</span>
-            <span class="created-at">{{item.created_at}}</span>
+            <span class="created-at">{{_format(item.created_at)}}</span>
           </div>
           <iron-autogrow-textarea
             class="comment-body"
