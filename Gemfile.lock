@@ -61,8 +61,6 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hashdiff (0.3.2)
-    httparty (0.14.0)
-      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     jbuilder (2.6.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -87,7 +85,6 @@ GEM
     momentjs-rails (2.17.1)
       railties (>= 3.1)
     multi_json (1.12.1)
-    multi_xml (0.6.0)
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
@@ -189,7 +186,6 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
-  httparty
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

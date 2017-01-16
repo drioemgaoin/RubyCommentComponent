@@ -37,7 +37,6 @@ gem 'redis', '~> 3.0'
 
 gem 'polymer-rails'
 gem 'polymer-elements-rails'
-gem 'httparty'
 gem 'momentjs-rails'
 
 group :development, :test do
