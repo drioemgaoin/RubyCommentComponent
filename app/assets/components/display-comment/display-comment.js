@@ -1,3 +1,9 @@
+function create(file) {
+  var script = document.createElement("script");
+  script.src = file;
+  document.head.appendChild(script);
+}
+
 Polymer({
   is: "display-comment",
   properties: {
@@ -10,11 +16,20 @@ Polymer({
     action: {
       type: String,
       computed: '_getAction(url)'
+    },
+    momentjsVersion: {
+      type: String,
+      value: "2.17.1"
     }
   },
   listeners: {
     'received': '_received',
     'response': '_response'
+  },
+  attached: function() {
+    if (typeof window.moment === "undefined") {
+      create("https://cdnjs.cloudflare.com/ajax/libs/moment.js/" + this.momentjsVersion + "/moment.min.js");
+    }
   },
   _received: function(data) {
     this.push('comments', data.detail.comment);

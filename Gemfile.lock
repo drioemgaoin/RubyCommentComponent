@@ -82,8 +82,6 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
-    momentjs-rails (2.17.1)
-      railties (>= 3.1)
     multi_json (1.12.1)
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
@@ -189,7 +187,6 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
-  momentjs-rails
   polymer-elements-rails
   polymer-rails
   puma (~> 3.0)
