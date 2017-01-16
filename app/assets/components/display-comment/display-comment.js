@@ -1,35 +1,22 @@
-function initializeRealtime(polymer) {
-  if (polymer.realtime === 'actioncable') {
-    initializeActionCable(polymer, "CommentChannel");
-  }
-};
-
-function initializeActionCable(polymer, channelName) {
-  App.comment = App.cable.subscriptions.create(channelName, {
-    connected: function() {
-      console.log("Connected to the channel CommentChannel");
-    },
-    disconnected: function() {
-      console.log("Disconnected to the channel CommentChannel");
-    },
-    received: function(data) {
-      polymer.push('comments', data.comment);
-    }
-  });
-};
-
 Polymer({
   is: "display-comment",
   properties: {
     url: String,
-    realtime: String,
+    realtime: {
+      type: String,
+      value: "actioncable"
+    },
     formatDate: String
   },
+  listeners: {
+    'received': '_received'
+  },
   ready: function() {
-    initializeRealtime(this);
-
     this.$.requestComments.url = this.url + "/comments";
     this.$.requestComments.generateRequest();
+  },
+  _received: function(data) {
+    this.push('comments', data.detail.comment);
   },
   handleResponse: function (data) {
     this.comments = data.detail.response;

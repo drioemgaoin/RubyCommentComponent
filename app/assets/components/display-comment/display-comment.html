@@ -1,4 +1,4 @@
-<dom-module id="display-comment">
+<dom-module id="display-comment" on-received="_received">
   <link rel="stylesheet" href="display-comment.css" />
 
   <template>
@@ -16,6 +16,8 @@
           </iron-autogrow-textarea>
       </div>
     </template>
+
+    <content></content>
 
     <iron-ajax
         id="requestComments"
