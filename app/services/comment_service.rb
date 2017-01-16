@@ -4,8 +4,6 @@ class CommentService
   base_uri "http://localhost:3000"
 
   def get_all
-    comments = Array
-
     response = self.class.get("/comments")
     if response.success?
       response.body
