@@ -1,9 +1,13 @@
 Polymer({
   is: "add-comment",
   properties: {
-    apiUrl: String
+    url: String,
+    action: {
+      type: String,
+      computed: '_getAction(url)'
+    }
   },
-  ready: function() {
-    this.$.form.action = this.apiUrl + "/comments";
+  _getAction(url) {
+    return url + "/comments";
   }
 });

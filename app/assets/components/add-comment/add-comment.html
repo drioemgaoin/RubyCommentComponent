@@ -4,7 +4,7 @@
   <template>
     <h2>Add comment</h2>
 
-    <form is="iron-form" id="form" method="post" class="form">
+    <form is="iron-form" method="post" class="form" action$="[[action]]">
       <div class="field">
         <label for="username">Username</label>
         <input id="username" name="comment[username]" type="text" />
