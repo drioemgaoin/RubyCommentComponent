@@ -22,7 +22,8 @@ Polymer({
   is: "display-comment",
   properties: {
     url: String,
-    realtime: String
+    realtime: String,
+    formatDate: String
   },
   ready: function() {
     initializeRealtime(this);
@@ -34,7 +35,7 @@ Polymer({
     this.comments = data.detail.response;
   },
   _format: function(date) {
-    return moment(date).format('MMMM Do YYYY, h:mm a');
+    return moment(date).format(this.formatDate);
   },
   _getImage: function() {
     return this.resolveUrl('generic-avatar.png');
