@@ -90,6 +90,7 @@ GEM
       mini_portile2 (~> 2.1.0)
     nokogumbo (1.4.2)
       nokogiri
+    pg (0.19.0-x86-mingw32)
     polymer-elements-rails (1.0.1)
       polymer-rails (~> 1.0, >= 1.0.3)
     polymer-rails (1.2.4.1)
@@ -187,6 +188,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  pg
   polymer-elements-rails
   polymer-rails
   puma (~> 3.0)

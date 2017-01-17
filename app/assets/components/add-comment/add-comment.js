@@ -7,7 +7,7 @@ Polymer({
       computed: '_getAction(url)'
     }
   },
-  _getAction(url) {
+  _getAction: function(url) {
     return url + "/comments";
   }
 });
