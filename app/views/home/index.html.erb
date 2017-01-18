@@ -1,13 +1,13 @@
 <div class="container">
   <h1>User Comment Component with Polymer</h1>
 
-  <display-comment url="http://localhost:3000"
+  <display-comment url="<%=ENV['COMMENT_API_URL']%>"
                    realtime="actioncable"
                    format-date="MMMM Do YYYY, h:mm a">
      <action-cable channel-name="CommentChannel">
      </action-cable>
   </display-comment>
 
-  <add-comment url="http://localhost:3000">
+  <add-comment url="<%=ENV['COMMENT_API_URL']%>">
   </add-comment>
 </div>

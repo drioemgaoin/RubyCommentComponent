@@ -35,6 +35,7 @@ gem 'redis', '~> 3.0'
 
 gem 'polymer-rails'
 gem 'polymer-elements-rails'
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
