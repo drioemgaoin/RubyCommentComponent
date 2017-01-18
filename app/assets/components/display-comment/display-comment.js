@@ -8,6 +8,7 @@ Polymer({
   is: "display-comment",
   properties: {
     url: String,
+    defaultAvatar: String,
     realtime: {
       type: String,
       value: "actioncable"
@@ -41,7 +42,7 @@ Polymer({
     return moment(date).format(this.formatDate);
   },
   _getImage: function() {
-    return this.resolveUrl('generic-avatar.png');
+    return this.defaultAvatar;
   },
   _getAction: function(url) {
     return url + "/comments";
