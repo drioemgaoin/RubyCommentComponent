@@ -10,7 +10,7 @@ Polymer({
   ready: function() {
     var self = this;
 
-    App.comment = App.cable.subscriptions.create(this.channelName, {
+    App.cable.subscriptions.create(this.channelName, {
       connected: function() {
         if (self.debug) {
           console.log("Connected to the channel " + self.channelName);
