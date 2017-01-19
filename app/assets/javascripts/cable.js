@@ -8,6 +8,6 @@
 (function() {
   this.App || (this.App = {});
 
-  App.cable = ActionCable.createConsumer('<%= ENV["ACTION_CABLE_URL"] %>');
+  App.cable = ActionCable.createConsumer();
 
 }).call(this);
