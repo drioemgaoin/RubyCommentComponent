@@ -4,7 +4,7 @@
   <template>
     <template is="dom-repeat" items="[[comments]]">
       <div class="comment">
-          <div class="comment-avatar"><img src$="[[_getImage()]]" /></div>
+          <div class="comment-avatar"><img src$="[[_getImage(item)]]" /></div>
           <div class="comment-infos">
             <span class="username">[[item.username]]</span>
             <span class="created-at">[[_format(item.created_at)]]</span>

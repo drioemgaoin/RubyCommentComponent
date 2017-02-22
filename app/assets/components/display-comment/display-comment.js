@@ -41,8 +41,8 @@ Polymer({
   _format: function(date) {
     return moment(date).format(this.formatDate);
   },
-  _getImage: function() {
-    return this.defaultAvatar;
+  _getImage: function(data) {
+    return data.avatar !== null ? data.avatar.thumb : this.defaultAvatar;
   },
   _getAction: function(url) {
     return url + "/comments";
