@@ -53,6 +53,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # Mount Action Cable outside main process or domain
-  config.action_cable.mount_path = '/cable'
   config.action_cable.url = ENV['ACTION_CABLE_URL']
 end
