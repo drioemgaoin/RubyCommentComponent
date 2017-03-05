@@ -36,10 +36,10 @@ Polymer({
     if (data.detail.action === 'add') {
       this.push('comments', data.detail.comment);
     } else if (data.detail.action === 'update') {
-      var comment = this.comments.find((comment) => comment.id === data.detail.comment.id);
+      var comment = this.comments.find(function(comment) { return comment.id === data.detail.comment.id; });
       this.splice('comments', this.comments.indexOf(comment), 1, data.detail.comment);
     } else if (data.detail.action === 'delete') {
-      var comment = this.comments.find((comment) => comment.id === data.detail.comment.id);
+      var comment = this.comments.find(function(comment) { return comment.id === data.detail.comment.id; });
       this.splice('comments', this.comments.indexOf(comment), 1);
     }
   },
