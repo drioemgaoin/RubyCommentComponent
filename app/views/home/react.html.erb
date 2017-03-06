@@ -1,5 +1,8 @@
 <div class="container">
   <h1>User Comment Component with React</h1>
 
-  <%= react_component('DisplayComment') %>
+  <%= react_component('DisplayComment', {
+    url: ENV['COMMENT_API_URL'],
+    defaultAvatar: asset_path('generic-avatar.png')
+  }) %>
 </div>
