@@ -1,0 +1,22 @@
+{
+  "name": "RubyCommentComponent",
+  "homepage": "https://github.com/drioemgaoin/RubyCommentComponent",
+  "authors": [
+    "Romain Diegoni"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react-intl": "1.2.0",
+    "moment": "^2.17.1"
+  }
+}

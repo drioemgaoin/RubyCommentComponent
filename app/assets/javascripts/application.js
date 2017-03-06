@@ -16,5 +16,7 @@
 //= require turbolinks
 //= require react
 //= require react_ujs
+//= require react-intl
+//= require moment
 //= require_tree ../components/react
 //= require_tree .
