@@ -37,6 +37,9 @@ gem 'polymer-rails'
 gem 'polymer-elements-rails'
 gem 'figaro'
 
+# React js
+gem 'react-rails', '~> 1.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
