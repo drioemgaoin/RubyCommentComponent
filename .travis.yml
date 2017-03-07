@@ -2,6 +2,8 @@ language: ruby
 rvm:
   - 2.2.2
 sudo: false
+before_script:
+  - bower install
 script:
   - export RAILS_ENV=test
   - bundle exec rake --trace db:migrate test
