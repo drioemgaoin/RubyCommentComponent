@@ -3,6 +3,7 @@ rvm:
   - 2.2.2
 sudo: false
 before_script:
+  - npm install bower -g
   - bower install
 script:
   - export RAILS_ENV=test
