@@ -1,48 +1,47 @@
 .root {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: stretch;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
 
-    &:not(:first-of-type) {
-        margin-top: 50px;
-    }
+  &:not(:first-of-type) {
+      margin-top: 50px;
+  }
 
-    .avatar {
-        img {
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            margin: auto;
-            background-size: contain;
-            vertical-align: middle;
-        }
-    }
+  .avatar {
+      img {
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          margin: auto;
+          background-size: contain;
+          vertical-align: middle;
+      }
+  }
 
-    .infos {
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: row;
-        flex-direction: row;
-        -webkit-flex-align-self: center;
-        -webkit-flex-justify-content: space-between;
-        justify-content: space-between;
-        align-items: center;
-        align-self: stretch;
+  .infos {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-align-self: center;
+      -webkit-flex-justify-content: space-between;
+      justify-content: space-between;
+      align-items: center;
+      align-self: stretch;
 
-        padding: 0px 0px 0px 30px;
-        width: calc(100% - 50px);
-        font-weight: bold;
-        color: #fff;
-    }
+      padding: 0px 0px 0px 30px;
+      width: calc(100% - 50px);
+      font-weight: bold;
+      color: #fff;
+  }
 
-    .body {
-        background: #F9BBB5;
-        left: 80px;
-        width: calc(100% - 80px);
-        background: #fff;
-        color: black;
-    }
+  .body {
+      margin-left: 80px;
+      width: calc(100% - 80px);
+      background: #fff;
+      color: black;
+  }
 }

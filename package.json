@@ -14,12 +14,14 @@
     "babel-preset-react": "6.23.0",
     "exports-loader": "~0.6.2",
     "expose-loader": "~0.6.0",
+    "extract-text-webpack-plugin": "2.1.0",
     "imports-loader": "~0.6.3",
     "react-styleable": "2.2.4",
     "webpack": "~1.4.13",
     "webpack-combine-loaders": "2.0.3"
   },
   "dependencies": {
+    "babel-preset-react-native-stage-0": "1.0.1",
     "css-loader": "0.26.4",
     "node-sass": "4.5.0",
     "react": "15.4.2",

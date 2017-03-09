@@ -58,117 +58,62 @@
   \*****************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _reactStyleable=__webpack_require__(/*! react-styleable */ 3);var _reactStyleable2=_interopRequireDefault(_reactStyleable);
 	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	var _displayComment=__webpack_require__(/*! ./display-comment */ 4);var _displayComment2=_interopRequireDefault(_displayComment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var
+	
+	
+	DisplayComment=function(_React$Component){_inherits(DisplayComment,_React$Component);
+	function DisplayComment(props){_classCallCheck(this,DisplayComment);var _this=_possibleConstructorReturn(this,(DisplayComment.__proto__||Object.getPrototypeOf(DisplayComment)).call(this,
+	props));
+	_this.state={
+	url:_this.props.url,
+	defaultAvatar:_this.props.defaultAvatar,
+	items:[]};return _this;
+	
+	}_createClass(DisplayComment,[{key:'componentDidMount',value:function componentDidMount()
+	
+	{var _this2=this;
+	$.getJSON(this.state.url+'/comments',function(response){_this2.setState({items:response});});
+	}},{key:'format',value:function format(
+	
+	date){
+	return moment(date).format("MMMM Do YYYY, h:mm a");
+	}},{key:'getImage',value:function getImage(
+	
+	avatar){
+	return avatar!==null?avatar.thumb:this.state.defaultAvatar;
+	}},{key:'render',value:function render()
+	
+	{var _this3=this;
+	var items=this.state.items.map(function(item){
+	console.log(_this3.props);
+	return(
+	React.createElement('div',{key:item.id,className:_displayComment2.default.root},
+	React.createElement('div',{className:_displayComment2.default.avatar},React.createElement('img',{src:_this3.getImage(item.avatar)})),
+	React.createElement('div',{className:_displayComment2.default.infos},
+	React.createElement('span',null,item.username),
+	React.createElement('span',null,_this3.format(item.created_at))),
+	
+	React.createElement('label',{className:_displayComment2.default.body},item.content)));
+	
+	
 	});
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _reactStyleable = __webpack_require__(/*! react-styleable */ 3);
-	
-	var _reactStyleable2 = _interopRequireDefault(_reactStyleable);
-	
-	var _displayComment = __webpack_require__(/*! ./display-comment.scss */ 4);
-	
-	var _displayComment2 = _interopRequireDefault(_displayComment);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var DisplayComment = function (_React$Component) {
-	  _inherits(DisplayComment, _React$Component);
-	
-	  function DisplayComment(props) {
-	    _classCallCheck(this, DisplayComment);
-	
-	    var _this = _possibleConstructorReturn(this, (DisplayComment.__proto__ || Object.getPrototypeOf(DisplayComment)).call(this, props));
-	
-	    _this.state = {
-	      url: _this.props.url,
-	      defaultAvatar: _this.props.defaultAvatar,
-	      items: []
-	    };
-	    return _this;
-	  }
-	
-	  _createClass(DisplayComment, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      var _this2 = this;
-	
-	      $.getJSON(this.state.url + '/comments', function (response) {
-	        _this2.setState({ items: response });
-	      });
-	    }
-	  }, {
-	    key: 'format',
-	    value: function format(date) {
-	      return moment(date).format("MMMM Do YYYY, h:mm a");
-	    }
-	  }, {
-	    key: 'getImage',
-	    value: function getImage(avatar) {
-	      return avatar !== null ? avatar.thumb : this.state.defaultAvatar;
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this3 = this;
-	
-	      var items = this.state.items.map(function (item) {
-	        return React.createElement(
-	          'div',
-	          { key: item.id, className: _displayComment2.default.root },
-	          React.createElement(
-	            'div',
-	            { className: _displayComment2.default.root.avatar },
-	            React.createElement('img', { src: _this3.getImage(item.avatar) })
-	          ),
-	          React.createElement(
-	            'div',
-	            { className: _displayComment2.default.root.infos },
-	            React.createElement(
-	              'span',
-	              null,
-	              item.username
-	            ),
-	            React.createElement(
-	              'span',
-	              null,
-	              _this3.format(item.created_at)
-	            )
-	          ),
-	          React.createElement('textarea', { className: _displayComment2.default.root.body, defaultValue: item.content })
-	        );
-	      });
-	
-	      return React.createElement(
-	        'div',
-	        null,
-	        items
-	      );
-	    }
-	  }]);
-	
-	  return DisplayComment;
-	}(React.Component);
-	
-	exports.default = DisplayComment;
+	return(
+	React.createElement('div',null,
+	items));
 	
 	
-	DisplayComment.propTypes = {
-	  url: React.PropTypes.string,
-	  defaultAvatar: React.PropTypes.string
-	};
+	}}]);return DisplayComment;}(React.Component);exports.default=DisplayComment;
 	
-	window.DisplayComment = DisplayComment;
+	
+	DisplayComment.propTypes={
+	url:React.PropTypes.string,
+	defaultAvatar:React.PropTypes.string};
+	
+	
+	window.DisplayComment=DisplayComment;
 
 /***/ },
 /* 2 */
@@ -177,51 +122,13 @@
   \*********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var AddComment = function (_React$Component) {
-	  _inherits(AddComment, _React$Component);
-	
-	  function AddComment() {
-	    _classCallCheck(this, AddComment);
-	
-	    return _possibleConstructorReturn(this, (AddComment.__proto__ || Object.getPrototypeOf(AddComment)).apply(this, arguments));
-	  }
-	
-	  _createClass(AddComment, [{
-	    key: "render",
-	    value: function render() {
-	      return React.createElement(
-	        "div",
-	        null,
-	        React.createElement(
-	          "h1",
-	          null,
-	          "Add Comment Component"
-	        )
-	      );
-	    }
-	  }]);
-	
-	  return AddComment;
-	}(React.Component);
-	
-	exports.default = AddComment;
+	"use strict";Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var AddComment=function(_React$Component){_inherits(AddComment,_React$Component);function AddComment(){_classCallCheck(this,AddComment);return _possibleConstructorReturn(this,(AddComment.__proto__||Object.getPrototypeOf(AddComment)).apply(this,arguments));}_createClass(AddComment,[{key:"render",value:function render()
+	{
+	return React.createElement("div",null,React.createElement("h1",null,"Add Comment Component"));
+	}}]);return AddComment;}(React.Component);exports.default=AddComment;
 	
 	
-	window.AddComment = AddComment;
+	window.AddComment=AddComment;
 
 /***/ },
 /* 3 */
@@ -242,7 +149,7 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !../../../../../~/css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./display-comment.scss */ 5);
+	var content = __webpack_require__(/*! !../../../../../~/css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../../../~/sass-loader/lib/loader.js!./display-comment.scss */ 5);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(/*! ../../../../../~/style-loader/addStyles.js */ 6)(content, {});
@@ -251,8 +158,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../../../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./display-comment.scss", function() {
-				var newContent = require("!!../../../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./display-comment.scss");
+			module.hot.accept("!!../../../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../../../node_modules/sass-loader/lib/loader.js!./display-comment.scss", function() {
+				var newContent = require("!!../../../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../../../node_modules/sass-loader/lib/loader.js!./display-comment.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -263,9 +170,9 @@
 
 /***/ },
 /* 5 */
-/*!*******************************************************************************************************************************************************!*\
-  !*** ./~/css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./app/assets/components/react/display-comment/display-comment.scss ***!
-  \*******************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./~/css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./~/sass-loader/lib/loader.js!./app/assets/components/react/display-comment/display-comment.scss ***!
+  \*************************************************************************************************************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(/*! ../../../../../~/css-loader/lib/css-base.js */ 8)();
@@ -273,7 +180,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".display-comment__root___twHN4 {\n    display: -webkit-flex;\n    display: flex;\n    -webkit-flex-direction: row;\n    flex-direction: row;\n    flex-wrap: wrap;\n    align-items: stretch;\n\n    &:not(:first-of-type) {\n        margin-top: 50px;\n    }\n\n    .display-comment__avatar___3Q30b {\n        img {\n            border-radius: 50%;\n            width: 50px;\n            height: 50px;\n            margin: auto;\n            background-size: contain;\n            vertical-align: middle;\n        }\n    }\n\n    .display-comment__infos___3pWUT {\n        display: -webkit-flex;\n        display: flex;\n        -webkit-flex-direction: row;\n        flex-direction: row;\n        -webkit-flex-align-self: center;\n        -webkit-flex-justify-content: space-between;\n        justify-content: space-between;\n        align-items: center;\n        align-self: stretch;\n\n        padding: 0px 0px 0px 30px;\n        width: calc(100% - 50px);\n        font-weight: bold;\n        color: #fff;\n    }\n\n    .display-comment__body___2Oe-e {\n        background: #F9BBB5;\n        left: 80px;\n        width: calc(100% - 80px);\n        background: #fff;\n        color: black;\n    }\n}\n", ""]);
+	exports.push([module.id, ".display-comment__root___twHN4 {\n  display: -webkit-flex;\n  display: flex;\n  -webkit-flex-direction: row;\n  flex-direction: row;\n  flex-wrap: wrap;\n  align-items: stretch; }\n  .display-comment__root___twHN4:not(:first-of-type) {\n    margin-top: 50px; }\n  .display-comment__root___twHN4 .display-comment__avatar___3Q30b img {\n    border-radius: 50%;\n    width: 50px;\n    height: 50px;\n    margin: auto;\n    background-size: contain;\n    vertical-align: middle; }\n  .display-comment__root___twHN4 .display-comment__infos___3pWUT {\n    display: -webkit-flex;\n    display: flex;\n    -webkit-flex-direction: row;\n    flex-direction: row;\n    -webkit-flex-align-self: center;\n    -webkit-flex-justify-content: space-between;\n    justify-content: space-between;\n    align-items: center;\n    align-self: stretch;\n    padding: 0px 0px 0px 30px;\n    width: calc(100% - 50px);\n    font-weight: bold;\n    color: #fff; }\n  .display-comment__root___twHN4 .display-comment__body___2Oe-e {\n    margin-left: 80px;\n    width: calc(100% - 80px);\n    background: #fff;\n    color: black; }\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -1369,7 +1276,7 @@
 	
 	var ReactComponent = __webpack_require__(/*! ./ReactComponent */ 15);
 	var ReactElement = __webpack_require__(/*! ./ReactElement */ 19);
-	var ReactPropTypeLocationNames = __webpack_require__(/*! ./ReactPropTypeLocationNames */ 32);
+	var ReactPropTypeLocationNames = __webpack_require__(/*! ./ReactPropTypeLocationNames */ 30);
 	var ReactNoopUpdateQueue = __webpack_require__(/*! ./ReactNoopUpdateQueue */ 28);
 	
 	var emptyObject = __webpack_require__(/*! fbjs/lib/emptyObject */ 39);
@@ -2269,13 +2176,13 @@
 	
 	var _assign = __webpack_require__(/*! object-assign */ 24);
 	
-	var ReactCurrentOwner = __webpack_require__(/*! ./ReactCurrentOwner */ 30);
+	var ReactCurrentOwner = __webpack_require__(/*! ./ReactCurrentOwner */ 33);
 	
 	var warning = __webpack_require__(/*! fbjs/lib/warning */ 37);
 	var canDefineProperty = __webpack_require__(/*! ./canDefineProperty */ 29);
 	var hasOwnProperty = Object.prototype.hasOwnProperty;
 	
-	var REACT_ELEMENT_TYPE = __webpack_require__(/*! ./ReactElementSymbol */ 31);
+	var REACT_ELEMENT_TYPE = __webpack_require__(/*! ./ReactElementSymbol */ 34);
 	
 	var RESERVED_PROPS = {
 	  key: true,
@@ -2617,11 +2524,11 @@
 	'use strict';
 	
 	var ReactElement = __webpack_require__(/*! ./ReactElement */ 19);
-	var ReactPropTypeLocationNames = __webpack_require__(/*! ./ReactPropTypeLocationNames */ 32);
-	var ReactPropTypesSecret = __webpack_require__(/*! ./ReactPropTypesSecret */ 33);
+	var ReactPropTypeLocationNames = __webpack_require__(/*! ./ReactPropTypeLocationNames */ 30);
+	var ReactPropTypesSecret = __webpack_require__(/*! ./ReactPropTypesSecret */ 31);
 	
 	var emptyFunction = __webpack_require__(/*! fbjs/lib/emptyFunction */ 38);
-	var getIteratorFn = __webpack_require__(/*! ./getIteratorFn */ 34);
+	var getIteratorFn = __webpack_require__(/*! ./getIteratorFn */ 32);
 	var warning = __webpack_require__(/*! fbjs/lib/warning */ 37);
 	
 	/**
@@ -3132,14 +3039,14 @@
 	
 	'use strict';
 	
-	var ReactCurrentOwner = __webpack_require__(/*! ./ReactCurrentOwner */ 30);
+	var ReactCurrentOwner = __webpack_require__(/*! ./ReactCurrentOwner */ 33);
 	var ReactComponentTreeHook = __webpack_require__(/*! ./ReactComponentTreeHook */ 35);
 	var ReactElement = __webpack_require__(/*! ./ReactElement */ 19);
 	
 	var checkReactTypeSpec = __webpack_require__(/*! ./checkReactTypeSpec */ 36);
 	
 	var canDefineProperty = __webpack_require__(/*! ./canDefineProperty */ 29);
-	var getIteratorFn = __webpack_require__(/*! ./getIteratorFn */ 34);
+	var getIteratorFn = __webpack_require__(/*! ./getIteratorFn */ 32);
 	var warning = __webpack_require__(/*! fbjs/lib/warning */ 37);
 	
 	function getDeclarationErrorAddendum() {
@@ -3588,10 +3495,10 @@
 	
 	var _prodInvariant = __webpack_require__(/*! ./reactProdInvariant */ 27);
 	
-	var ReactCurrentOwner = __webpack_require__(/*! ./ReactCurrentOwner */ 30);
-	var REACT_ELEMENT_TYPE = __webpack_require__(/*! ./ReactElementSymbol */ 31);
+	var ReactCurrentOwner = __webpack_require__(/*! ./ReactCurrentOwner */ 33);
+	var REACT_ELEMENT_TYPE = __webpack_require__(/*! ./ReactElementSymbol */ 34);
 	
-	var getIteratorFn = __webpack_require__(/*! ./getIteratorFn */ 34);
+	var getIteratorFn = __webpack_require__(/*! ./getIteratorFn */ 32);
 	var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 40);
 	var KeyEscapeUtils = __webpack_require__(/*! ./KeyEscapeUtils */ 41);
 	var warning = __webpack_require__(/*! fbjs/lib/warning */ 37);
@@ -3937,71 +3844,6 @@
 
 /***/ },
 /* 30 */
-/*!******************************************!*\
-  !*** ./~/react/lib/ReactCurrentOwner.js ***!
-  \******************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-present, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * 
-	 */
-	
-	'use strict';
-	
-	/**
-	 * Keeps track of the current owner.
-	 *
-	 * The current owner is the component who should own any components that are
-	 * currently being constructed.
-	 */
-	var ReactCurrentOwner = {
-	
-	  /**
-	   * @internal
-	   * @type {ReactComponent}
-	   */
-	  current: null
-	
-	};
-	
-	module.exports = ReactCurrentOwner;
-
-/***/ },
-/* 31 */
-/*!*******************************************!*\
-  !*** ./~/react/lib/ReactElementSymbol.js ***!
-  \*******************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2014-present, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * 
-	 */
-	
-	'use strict';
-	
-	// The Symbol used to tag the ReactElement type. If there is no native Symbol
-	// nor polyfill, then a plain number is used for performance.
-	
-	var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('react.element') || 0xeac7;
-	
-	module.exports = REACT_ELEMENT_TYPE;
-
-/***/ },
-/* 32 */
 /*!***************************************************!*\
   !*** ./~/react/lib/ReactPropTypeLocationNames.js ***!
   \***************************************************/
@@ -4034,7 +3876,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 13)))
 
 /***/ },
-/* 33 */
+/* 31 */
 /*!*********************************************!*\
   !*** ./~/react/lib/ReactPropTypesSecret.js ***!
   \*********************************************/
@@ -4058,7 +3900,7 @@
 	module.exports = ReactPropTypesSecret;
 
 /***/ },
-/* 34 */
+/* 32 */
 /*!**************************************!*\
   !*** ./~/react/lib/getIteratorFn.js ***!
   \**************************************/
@@ -4106,6 +3948,71 @@
 	module.exports = getIteratorFn;
 
 /***/ },
+/* 33 */
+/*!******************************************!*\
+  !*** ./~/react/lib/ReactCurrentOwner.js ***!
+  \******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * 
+	 */
+	
+	'use strict';
+	
+	/**
+	 * Keeps track of the current owner.
+	 *
+	 * The current owner is the component who should own any components that are
+	 * currently being constructed.
+	 */
+	var ReactCurrentOwner = {
+	
+	  /**
+	   * @internal
+	   * @type {ReactComponent}
+	   */
+	  current: null
+	
+	};
+	
+	module.exports = ReactCurrentOwner;
+
+/***/ },
+/* 34 */
+/*!*******************************************!*\
+  !*** ./~/react/lib/ReactElementSymbol.js ***!
+  \*******************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2014-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * 
+	 */
+	
+	'use strict';
+	
+	// The Symbol used to tag the ReactElement type. If there is no native Symbol
+	// nor polyfill, then a plain number is used for performance.
+	
+	var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('react.element') || 0xeac7;
+	
+	module.exports = REACT_ELEMENT_TYPE;
+
+/***/ },
 /* 35 */
 /*!***********************************************!*\
   !*** ./~/react/lib/ReactComponentTreeHook.js ***!
@@ -4127,7 +4034,7 @@
 	
 	var _prodInvariant = __webpack_require__(/*! ./reactProdInvariant */ 27);
 	
-	var ReactCurrentOwner = __webpack_require__(/*! ./ReactCurrentOwner */ 30);
+	var ReactCurrentOwner = __webpack_require__(/*! ./ReactCurrentOwner */ 33);
 	
 	var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 40);
 	var warning = __webpack_require__(/*! fbjs/lib/warning */ 37);
@@ -4468,8 +4375,8 @@
 	
 	var _prodInvariant = __webpack_require__(/*! ./reactProdInvariant */ 27);
 	
-	var ReactPropTypeLocationNames = __webpack_require__(/*! ./ReactPropTypeLocationNames */ 32);
-	var ReactPropTypesSecret = __webpack_require__(/*! ./ReactPropTypesSecret */ 33);
+	var ReactPropTypeLocationNames = __webpack_require__(/*! ./ReactPropTypeLocationNames */ 30);
+	var ReactPropTypesSecret = __webpack_require__(/*! ./ReactPropTypesSecret */ 31);
 	
 	var invariant = __webpack_require__(/*! fbjs/lib/invariant */ 40);
 	var warning = __webpack_require__(/*! fbjs/lib/warning */ 37);

@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var combineLoaders = require('webpack-combine-loaders')
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var config = module.exports = {
   context: __dirname,
@@ -13,7 +14,7 @@ var config = module.exports = {
     filename: "bundle.js"
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.scss']
   },
   module: {
     loaders: [
@@ -24,20 +25,26 @@ var config = module.exports = {
         query: { presets:['es2015', 'react'] }
       },
       {
-        test: /\.(scss|sass|css)$/,
+        test: /\.scss$/,
         loader: combineLoaders([
           {
             loader: 'style-loader'
           },
           {
-            loader: 'sass-loader',
+            loader: 'css-loader',
             query: {
               modules: true,
               localIdentName: '[name]__[local]___[hash:base64:5]'
             }
+          },
+          {
+            loader: 'sass-loader'
           }
         ])
       }
     ],
   },
+  sassLoader: {
+    sourceMap: true
+  }
 };

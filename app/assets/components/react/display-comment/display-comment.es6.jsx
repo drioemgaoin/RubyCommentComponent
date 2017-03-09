@@ -1,7 +1,8 @@
 import styleable from 'react-styleable'
 
-import css from "./display-comment.scss"
+import css from "./display-comment"
 
+@styleable(css)
 export default class DisplayComment extends React.Component {
   constructor(props) {
     super(props);
@@ -26,14 +27,15 @@ export default class DisplayComment extends React.Component {
 
   render() {
     var items = this.state.items.map((item) => {
+      console.log(this.props);
       return (
         <div key={item.id} className={css.root}>
-          <div className={css.root.avatar}><img src={this.getImage(item.avatar)} /></div>
-          <div className={css.root.infos}>
+          <div className={css.avatar}><img src={this.getImage(item.avatar)} /></div>
+          <div className={css.infos}>
             <span>{item.username}</span>
             <span>{this.format(item.created_at)}</span>
           </div>
-          <textarea className={css.root.body} defaultValue={item.content}></textarea>
+          <label className={css.body}>{item.content}</label>
         </div>
       )
     });
