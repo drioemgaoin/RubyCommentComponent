@@ -37,6 +37,8 @@
       width: calc(100% - 50px);
       font-weight: bold;
       color: #fff;
+
+      pointer-events: none;
   }
 
   .body {
@@ -44,5 +46,9 @@
       width: calc(100% - 80px);
       background: #fff;
       color: black;
+      overflow: auto;
+      outline: none;
+      resize: none;
+      pointer-events: none;
   }
 }
