@@ -5,4 +5,8 @@
     url: ENV['COMMENT_API_URL'],
     defaultAvatar: asset_path('generic-avatar.png')
   }) %>
+
+  <%= react_component('AddComment', {
+    url: ENV['COMMENT_API_URL']
+  }) %>
 </div>

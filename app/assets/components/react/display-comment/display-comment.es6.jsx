@@ -1,5 +1,4 @@
 import styleable from 'react-styleable'
-
 import css from "./display-comment"
 
 @styleable(css)
@@ -27,7 +26,6 @@ export default class DisplayComment extends React.Component {
 
   render() {
     var items = this.state.items.map((item) => {
-      console.log(this.props);
       return (
         <div key={item.id} className={css.root}>
           <div className={css.avatar}><img src={this.getImage(item.avatar)} /></div>

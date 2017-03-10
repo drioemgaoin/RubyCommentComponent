@@ -1,0 +1,51 @@
+.root {
+  display: block;
+  background: var(--add-comment-background);
+  width: var(--add-comment-width);
+  padding: 15px;
+
+  form {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    -webkit-flex-direction: column; /* Safari */
+    flex-direction: column;
+
+    .field {
+      display: -webkit-flex; /* Safari */
+      display: flex;
+      -webkit-flex-direction: row; /* Safari */
+      flex-direction: row;
+      -webkit-align-items: center; /* Safari */
+      align-items: center;
+
+      .label {
+        width: 90px;
+      }
+
+      .input {
+        height: 25px;
+      }
+
+      .textarea {
+        height: 150px;
+        resize: none;
+      }
+
+      & > *:not([type=hidden]) ~ * {
+        margin-left: 10px;
+        width: 100%;
+      }
+
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+    }
+
+    .input[type=submit] {
+      align-self: center;
+      margin-top: 30px;
+      width: 100px;
+      height: 35px;
+    }
+  }
+}
