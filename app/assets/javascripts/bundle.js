@@ -66,22 +66,20 @@
 	function DisplayComment(props){_classCallCheck(this,DisplayComment);var _this=_possibleConstructorReturn(this,(DisplayComment.__proto__||Object.getPrototypeOf(DisplayComment)).call(this,
 	props));
 	_this.state={
-	url:_this.props.url,
-	defaultAvatar:_this.props.defaultAvatar,
 	items:[]};return _this;
 	
 	}_createClass(DisplayComment,[{key:'componentDidMount',value:function componentDidMount()
 	
 	{var _this2=this;
-	$.getJSON(this.state.url+'/comments',function(response){_this2.setState({items:response});});
+	$.getJSON(this.props.url+'/comments',function(response){_this2.setState({items:response});});
 	}},{key:'format',value:function format(
 	
 	date){
-	return moment(date).format("MMMM Do YYYY, h:mm a");
+	return moment(date).format(this.props.dateFormat);
 	}},{key:'getImage',value:function getImage(
 	
 	avatar){
-	return avatar!==null?avatar.thumb:this.state.defaultAvatar;
+	return avatar!==null?avatar.thumb:this.props.defaultAvatar;
 	}},{key:'render',value:function render()
 	
 	{var _this3=this;

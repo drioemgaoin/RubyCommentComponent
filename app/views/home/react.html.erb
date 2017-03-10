@@ -3,7 +3,8 @@
 
   <%= react_component('DisplayComment', {
     url: ENV['COMMENT_API_URL'],
-    defaultAvatar: asset_path('generic-avatar.png')
+    defaultAvatar: asset_path('generic-avatar.png'),
+    dateFormat: "MMMM Do YYYY, h:mm a"
   }) %>
 
   <%= react_component('AddComment', {
