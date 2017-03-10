@@ -1,4 +1,5 @@
 import styleable from 'react-styleable'
+import Textarea from 'react-textarea-autosize';
 import css from "./display-comment"
 
 @styleable(css)
@@ -31,7 +32,7 @@ export default class DisplayComment extends React.Component {
             <span>{item.username}</span>
             <span>{this.format(item.created_at)}</span>
           </div>
-          <label className={css.body}>{item.content}</label>
+          <Textarea className={css.body} defaultValue={item.content}></Textarea>
         </div>
       )
     });
