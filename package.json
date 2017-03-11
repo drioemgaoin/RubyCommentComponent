@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install",
+    "postinstall": "npm install bower -g && ./node_modules/bower/bin/bower install",
     "start": "webpack-dev-server --content-base dist/ --port 9999",
     "build": "./node_modules/webpack/bin/webpack.js --progress",
     "build:prod": "./node_modules/webpack/bin/webpack.js -p --progress --config webpack.production.config.js"
