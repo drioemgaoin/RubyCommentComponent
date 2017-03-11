@@ -27,6 +27,7 @@
     "sass-loader": "6.0.3",
     "style-loader": "0.13.2",
     "webpack": "~1.4.13",
-    "webpack-combine-loaders": "2.0.3"
+    "webpack-combine-loaders": "2.0.3",
+    "babel-preset-react-native-stage-0": "1.0.1"
   }
 }
