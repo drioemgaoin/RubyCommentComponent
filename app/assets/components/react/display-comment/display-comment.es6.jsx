@@ -32,7 +32,7 @@ export default class DisplayComment extends React.Component {
             <span>{item.username}</span>
             <span>{this.format(item.created_at)}</span>
           </div>
-          <Textarea className={css.body} defaultValue={item.content}></Textarea>
+          <Textarea className={css.content} defaultValue={item.content}></Textarea>
         </div>
       )
     });

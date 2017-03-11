@@ -41,7 +41,7 @@
       pointer-events: none;
   }
 
-  .body {
+  .content {
       margin-left: 80px;
       width: calc(100% - 80px);
       background: #fff;
@@ -49,6 +49,9 @@
       overflow: auto;
       outline: none;
       resize: none;
+      border: none;
       pointer-events: none;
+      font-family: inherit;
+      font-size: inherit;
   }
 }
