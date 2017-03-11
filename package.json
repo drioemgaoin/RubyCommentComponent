@@ -19,16 +19,16 @@
     "imports-loader": "~0.6.3",
     "react-styleable": "2.2.4",
     "webpack": "~1.4.13",
-    "webpack-combine-loaders": "2.0.3"
+    "webpack-combine-loaders": "2.0.3",
+    "css-loader": "0.26.4",
+    "sass-loader": "6.0.3",
+    "style-loader": "0.13.2",
+    "node-sass": "4.5.0",
+    "babel-preset-react-native-stage-0": "1.0.1"
   },
   "dependencies": {
-    "babel-preset-react-native-stage-0": "1.0.1",
-    "css-loader": "0.26.4",
-    "node-sass": "4.5.0",
     "react": "15.4.2",
     "react-dom": "15.4.2",
-    "react-textarea-autosize": "4.0.5",
-    "sass-loader": "6.0.3",
-    "style-loader": "0.13.2"
+    "react-textarea-autosize": "4.0.5"
   }
 }

@@ -28,3 +28,6 @@
 
 # Ignore node modules
 /node_modules
+
+# Ignore webpack generated file
+/app/assets/javascripts/bundle.*
