@@ -9,26 +9,24 @@
     "build:prod": "./node_modules/webpack/bin/webpack.js -p --progress --config webpack.production.config.js"
   },
   "devDependencies": {
+
+  },
+  "dependencies": {
     "babel-core": "6.23.1",
     "babel-loader": "6.4.0",
     "babel-preset-es2015": "6.22.0",
     "babel-preset-react": "6.23.0",
-    "exports-loader": "~0.6.2",
-    "expose-loader": "~0.6.0",
-    "extract-text-webpack-plugin": "2.1.0",
-    "imports-loader": "~0.6.3",
-    "react-styleable": "2.2.4",
+    "react": "15.4.2",
+    "react-dom": "15.4.2",
+    "react-textarea-autosize": "4.0.5",
     "webpack": "~1.4.13",
-    "webpack-combine-loaders": "2.0.3",
     "css-loader": "0.26.4",
     "sass-loader": "6.0.3",
     "style-loader": "0.13.2",
     "node-sass": "4.5.0",
-    "babel-preset-react-native-stage-0": "1.0.1"
-  },
-  "dependencies": {
-    "react": "15.4.2",
-    "react-dom": "15.4.2",
-    "react-textarea-autosize": "4.0.5"
+    "exports-loader": "~0.6.2",
+    "expose-loader": "~0.6.0",
+    "imports-loader": "~0.6.3",
+    "react-styleable": "2.2.4"
   }
 }

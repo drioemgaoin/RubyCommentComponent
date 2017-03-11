@@ -10,7 +10,7 @@ namespace :assets do
 
   desc 'Compile assets with webpack'
   task :webpack do
-    sh "#{app.config.root}/node_modules/webpack/bin/webpack.js -p --config #{app.config.root}/webpack.config.js --progress"
+    sh './node_modules/webpack/bin/webpack.js -p --config ./webpack.config.js --progress'
   end
 
   task :clobber do
