@@ -4,7 +4,8 @@
   <%= react_component('DisplayComment', {
     url: ENV['COMMENT_API_URL'],
     defaultAvatar: asset_path('generic-avatar.png'),
-    dateFormat: "MMMM Do YYYY, h:mm a"
+    dateFormat: "MMMM Do YYYY, h:mm a",
+    channelName: "CommentChannel"
   }) %>
 
   <%= react_component('AddComment', {

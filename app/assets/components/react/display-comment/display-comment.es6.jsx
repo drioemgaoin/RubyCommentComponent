@@ -6,12 +6,15 @@ import css from "./display-comment"
 export default class DisplayComment extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       items: []
     };
   }
 
   componentDidMount() {
+    this.setupSubscription();
+
     $.getJSON(this.props.url + '/comments', (response) => { this.setState({ items: response }) });
   }
 
@@ -27,6 +30,41 @@ export default class DisplayComment extends React.Component {
     return new Date(comment1.created_at) - new Date(comment2.created_at);
   }
 
+  updateCommentList(data) {
+    if (data.action === 'add') {
+      this.setState({items: this.state.items.concat([data.comment])})
+    } else if (data.action === 'update') {
+      const comments = this.state.items.map(item => item.id === data.comment.id
+        ? data.comment : item)
+      this.setState({ items: comments })
+    } else if (data.action === 'delete') {
+      const comments = this.state.items.filter(item => item.id !== data.comment.id)
+      this.setState({ items: comments })
+    }
+  }
+
+  setupSubscription(){
+    const self = this;
+
+    App.comments = App.cable.subscriptions.create(self.props.channelName, {
+      connected: function () {
+        console.log("Connected to the channel " + self.props.channelName);
+      },
+
+      disconnected: function() {
+        console.log("Disconnected to the channel " + self.props.channelName);
+      },
+
+      received: function (data) {
+        console.log("Data received on the channel " + self.props.channelName + ": " + JSON.stringify(data));
+        self.updateCommentList(data);
+      },
+
+      updateCommentList: this.updateCommentList
+
+    });
+  }
+
   render() {
     var items = this.state.items.sort(this.orderByAscDate).map((item) => {
       return (
@@ -36,7 +74,7 @@ export default class DisplayComment extends React.Component {
             <span>{item.username}</span>
             <span>{this.format(item.created_at)}</span>
           </div>
-          <Textarea className={css.content} defaultValue={item.content}></Textarea>
+          <Textarea className={css.content} value={item.content}></Textarea>
         </div>
       )
     });
@@ -51,7 +89,9 @@ export default class DisplayComment extends React.Component {
 
 DisplayComment.propTypes = {
   url: React.PropTypes.string,
-  defaultAvatar: React.PropTypes.string
+  defaultAvatar: React.PropTypes.string,
+  dateFormat: React.PropTypes.string,
+  channelName: React.PropTypes.string
 };
 
 window.DisplayComment = DisplayComment
