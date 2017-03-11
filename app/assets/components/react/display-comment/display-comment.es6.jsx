@@ -23,8 +23,8 @@ export default class DisplayComment extends React.Component {
     return avatar !== null ? avatar.thumb : this.props.defaultAvatar;
   }
 
-  orderByAscDate(a, b) {
-    return new Date(a.created_at) - new Date(b.created_at);
+  orderByAscDate(comment1, comment2) {
+    return new Date(comment1.created_at) - new Date(comment2.created_at);
   }
 
   render() {
