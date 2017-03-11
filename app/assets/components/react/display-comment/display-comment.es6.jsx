@@ -1,29 +1,16 @@
-import styleable from 'react-styleable'
-import Textarea from 'react-textarea-autosize';
-import css from "./display-comment"
+import Comment from './comment.es6.jsx'
 
-@styleable(css)
 export default class DisplayComment extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      items: []
-    };
+    this.state = { comments: [] };
   }
 
   componentDidMount() {
     this.setupSubscription();
 
-    $.getJSON(this.props.url + '/comments', (response) => { this.setState({ items: response }) });
-  }
-
-  format(date) {
-    return moment(date).format(this.props.dateFormat);
-  }
-
-  getImage(avatar) {
-    return avatar !== null ? avatar.thumb : this.props.defaultAvatar;
+    $.getJSON(this.props.url + '/comments', (comments) => { this.setState({ comments: comments }) });
   }
 
   orderByAscDate(comment1, comment2) {
@@ -32,14 +19,13 @@ export default class DisplayComment extends React.Component {
 
   updateCommentList(data) {
     if (data.action === 'add') {
-      this.setState({items: this.state.items.concat([data.comment])})
+      this.setState({ comments: this.state.comments.concat([data.comment]) })
     } else if (data.action === 'update') {
-      const comments = this.state.items.map(item => item.id === data.comment.id
-        ? data.comment : item)
-      this.setState({ items: comments })
+      const comments = this.state.comments.map(comment => comment.id === data.comment.id ? data.comment : comment)
+      this.setState({ comments: comments })
     } else if (data.action === 'delete') {
-      const comments = this.state.items.filter(item => item.id !== data.comment.id)
-      this.setState({ items: comments })
+      const comments = this.state.comments.filter(comment => comment.id !== data.comment.id)
+      this.setState({ comments: comments })
     }
   }
 
@@ -66,32 +52,12 @@ export default class DisplayComment extends React.Component {
   }
 
   render() {
-    var items = this.state.items.sort(this.orderByAscDate).map((item) => {
-      return (
-        <div key={item.id} className={css.root}>
-          <div className={css.avatar}><img src={this.getImage(item.avatar)} /></div>
-          <div className={css.infos}>
-            <span>{item.username}</span>
-            <span>{this.format(item.created_at)}</span>
-          </div>
-          <Textarea className={css.content} value={item.content}></Textarea>
-        </div>
-      )
+    var items = this.state.comments.sort(this.orderByAscDate).map((comment) => {
+      return (<Comment key={comment.id} comment={comment} defaultAvatar={this.props.defaultAvatar} />)
     });
 
-    return(
-      <div>
-        {items}
-      </div>
-    )
+    return(<div>{items}</div>)
   }
 }
-
-DisplayComment.propTypes = {
-  url: React.PropTypes.string,
-  defaultAvatar: React.PropTypes.string,
-  dateFormat: React.PropTypes.string,
-  channelName: React.PropTypes.string
-};
 
 window.DisplayComment = DisplayComment
