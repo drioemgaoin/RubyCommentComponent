@@ -23,8 +23,12 @@ export default class DisplayComment extends React.Component {
     return avatar !== null ? avatar.thumb : this.props.defaultAvatar;
   }
 
+  orderByAscDate(a, b) {
+    return new Date(a.created_at) - new Date(b.created_at);
+  }
+
   render() {
-    var items = this.state.items.map((item) => {
+    var items = this.state.items.sort(this.orderByAscDate).map((item) => {
       return (
         <div key={item.id} className={css.root}>
           <div className={css.avatar}><img src={this.getImage(item.avatar)} /></div>

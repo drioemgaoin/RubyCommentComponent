@@ -81,10 +81,14 @@
 	
 	avatar){
 	return avatar!==null?avatar.thumb:this.props.defaultAvatar;
+	}},{key:'orderByAscDate',value:function orderByAscDate(
+	
+	a,b){
+	return new Date(a.created_at)-new Date(b.created_at);
 	}},{key:'render',value:function render()
 	
 	{var _this3=this;
-	var items=this.state.items.map(function(item){
+	var items=this.state.items.sort(this.orderByAscDate).map(function(item){
 	return(
 	React.createElement('div',{key:item.id,className:_displayComment2.default.root},
 	React.createElement('div',{className:_displayComment2.default.avatar},React.createElement('img',{src:_this3.getImage(item.avatar)})),
