@@ -48,8 +48,8 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(/*! ./app/assets/components/react/add-comment/add-comment.es6.jsx */1);
-	__webpack_require__(/*! ./app/assets/components/react/display-comment/comment.es6.jsx */2);
-	module.exports = __webpack_require__(/*! ./app/assets/components/react/display-comment/display-comment.es6.jsx */3);
+	__webpack_require__(/*! ./app/assets/components/react/display-comment/comment-list.es6.jsx */2);
+	module.exports = __webpack_require__(/*! ./app/assets/components/react/display-comment/comment.es6.jsx */3);
 
 
 /***/ },
@@ -60,7 +60,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _reactStyleable=__webpack_require__(/*! react-styleable */ 4);var _reactStyleable2=_interopRequireDefault(_reactStyleable);
-	var _addComment=__webpack_require__(/*! ./add-comment */ 8);var _addComment2=_interopRequireDefault(_addComment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var
+	var _addComment=__webpack_require__(/*! ./add-comment */ 5);var _addComment2=_interopRequireDefault(_addComment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var
 	
 	AddComment=function(_React$Component){_inherits(AddComment,_React$Component);
 	function AddComment(props){_classCallCheck(this,AddComment);var _this=_possibleConstructorReturn(this,(AddComment.__proto__||Object.getPrototypeOf(AddComment)).call(this,
@@ -142,57 +142,21 @@
 
 /***/ },
 /* 2 */
-/*!*********************************************************************!*\
-  !*** ./app/assets/components/react/display-comment/comment.es6.jsx ***!
-  \*********************************************************************/
+/*!**************************************************************************!*\
+  !*** ./app/assets/components/react/display-comment/comment-list.es6.jsx ***!
+  \**************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _reactStyleable=__webpack_require__(/*! react-styleable */ 4);var _reactStyleable2=_interopRequireDefault(_reactStyleable);
-	var _reactTextareaAutosize=__webpack_require__(/*! react-textarea-autosize */ 5);var _reactTextareaAutosize2=_interopRequireDefault(_reactTextareaAutosize);
-	var _comment=__webpack_require__(/*! ./comment */ 6);var _comment2=_interopRequireDefault(_comment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _commentEs=__webpack_require__(/*! ./comment.es6.jsx */ 3);var _commentEs2=_interopRequireDefault(_commentEs);
+	var _commentList=__webpack_require__(/*! ./comment-list */ 47);var _commentList2=_interopRequireDefault(_commentList);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var
 	
 	
-	Comment=function(_React$Component){_inherits(Comment,_React$Component);
-	function Comment(props){_classCallCheck(this,Comment);return _possibleConstructorReturn(this,(Comment.__proto__||Object.getPrototypeOf(Comment)).call(this,
-	props));
-	}_createClass(Comment,[{key:'format',value:function format(
-	
-	date){
-	return moment(date).format(this.props.dateFormat);
-	}},{key:'image',value:function image(
-	
-	avatar){
-	return avatar!==null?avatar.thumb:this.props.defaultAvatar;
-	}},{key:'render',value:function render()
-	
-	{
-	return(
-	React.createElement('div',{className:_comment2.default.root},
-	React.createElement('div',{className:_comment2.default.avatar},React.createElement('img',{src:this.image(this.props.comment.avatar)})),
-	React.createElement('div',{className:_comment2.default.infos},
-	React.createElement('span',null,this.props.comment.username),
-	React.createElement('span',null,this.format(this.props.comment.created_at))),
-	
-	React.createElement(_reactTextareaAutosize2.default,{className:_comment2.default.content,value:this.props.comment.content})));
-	
-	
-	}}]);return Comment;}(React.Component);exports.default=Comment;
-
-/***/ },
-/* 3 */
-/*!*****************************************************************************!*\
-  !*** ./app/assets/components/react/display-comment/display-comment.es6.jsx ***!
-  \*****************************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _commentEs=__webpack_require__(/*! ./comment.es6.jsx */ 2);var _commentEs2=_interopRequireDefault(_commentEs);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var
-	
-	DisplayComment=function(_React$Component){_inherits(DisplayComment,_React$Component);
-	function DisplayComment(props){_classCallCheck(this,DisplayComment);var _this=_possibleConstructorReturn(this,(DisplayComment.__proto__||Object.getPrototypeOf(DisplayComment)).call(this,
+	CommentList=function(_React$Component){_inherits(CommentList,_React$Component);
+	function CommentList(props){_classCallCheck(this,CommentList);var _this=_possibleConstructorReturn(this,(CommentList.__proto__||Object.getPrototypeOf(CommentList)).call(this,
 	props));
 	
 	_this.state={comments:[]};return _this;
-	}_createClass(DisplayComment,[{key:'componentDidMount',value:function componentDidMount()
+	}_createClass(CommentList,[{key:'componentDidMount',value:function componentDidMount()
 	
 	{var _this2=this;
 	this.setupSubscription();
@@ -243,11 +207,49 @@
 	return React.createElement(_commentEs2.default,{key:comment.id,comment:comment,defaultAvatar:_this3.props.defaultAvatar});
 	});
 	
-	return React.createElement('div',null,items);
-	}}]);return DisplayComment;}(React.Component);exports.default=DisplayComment;
+	return React.createElement('div',{className:_commentList2.default.root},items);
+	}}]);return CommentList;}(React.Component);exports.default=CommentList;
 	
 	
-	window.DisplayComment=DisplayComment;
+	window.CommentList=CommentList;
+
+/***/ },
+/* 3 */
+/*!*********************************************************************!*\
+  !*** ./app/assets/components/react/display-comment/comment.es6.jsx ***!
+  \*********************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';Object.defineProperty(exports,"__esModule",{value:true});var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();var _reactStyleable=__webpack_require__(/*! react-styleable */ 4);var _reactStyleable2=_interopRequireDefault(_reactStyleable);
+	var _reactTextareaAutosize=__webpack_require__(/*! react-textarea-autosize */ 9);var _reactTextareaAutosize2=_interopRequireDefault(_reactTextareaAutosize);
+	var _comment=__webpack_require__(/*! ./comment */ 7);var _comment2=_interopRequireDefault(_comment);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var
+	
+	
+	Comment=function(_React$Component){_inherits(Comment,_React$Component);
+	function Comment(props){_classCallCheck(this,Comment);return _possibleConstructorReturn(this,(Comment.__proto__||Object.getPrototypeOf(Comment)).call(this,
+	props));
+	}_createClass(Comment,[{key:'format',value:function format(
+	
+	date){
+	return moment(date).format(this.props.dateFormat);
+	}},{key:'image',value:function image(
+	
+	avatar){
+	return avatar!==null?avatar.thumb:this.props.defaultAvatar;
+	}},{key:'render',value:function render()
+	
+	{
+	return(
+	React.createElement('div',{className:_comment2.default.root},
+	React.createElement('div',{className:_comment2.default.avatar},React.createElement('img',{src:this.image(this.props.comment.avatar)})),
+	React.createElement('div',{className:_comment2.default.infos},
+	React.createElement('span',null,this.props.comment.username),
+	React.createElement('span',null,this.format(this.props.comment.created_at))),
+	
+	React.createElement(_reactTextareaAutosize2.default,{className:_comment2.default.content,value:this.props.comment.content})));
+	
+	
+	}}]);return Comment;}(React.Component);exports.default=Comment;
 
 /***/ },
 /* 4 */
@@ -260,6 +262,109 @@
 
 /***/ },
 /* 5 */
+/*!******************************************************************!*\
+  !*** ./app/assets/components/react/add-comment/add-comment.scss ***!
+  \******************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(/*! !../../../../../~/css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../../../~/sass-loader/lib/loader.js!./add-comment.scss */ 6);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ../../../../../~/style-loader/addStyles.js */ 10)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../../../node_modules/sass-loader/lib/loader.js!./add-comment.scss", function() {
+				var newContent = require("!!../../../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../../../node_modules/sass-loader/lib/loader.js!./add-comment.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 6 */
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./~/css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./~/sass-loader/lib/loader.js!./app/assets/components/react/add-comment/add-comment.scss ***!
+  \*****************************************************************************************************************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(/*! ../../../../../~/css-loader/lib/css-base.js */ 13)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".add-comment__root___1D8oP {\n  display: block;\n  background: var(--add-comment-background);\n  width: var(--add-comment-width);\n  padding: 15px; }\n  .add-comment__root___1D8oP form {\n    display: -webkit-flex;\n    /* Safari */\n    display: flex;\n    -webkit-flex-direction: column;\n    /* Safari */\n    flex-direction: column; }\n    .add-comment__root___1D8oP form .add-comment__field___Ipw4N {\n      display: -webkit-flex;\n      /* Safari */\n      display: flex;\n      -webkit-flex-direction: row;\n      /* Safari */\n      flex-direction: row;\n      -webkit-align-items: center;\n      /* Safari */\n      align-items: center; }\n      .add-comment__root___1D8oP form .add-comment__field___Ipw4N .add-comment__label___122hU {\n        width: 90px; }\n      .add-comment__root___1D8oP form .add-comment__field___Ipw4N .add-comment__input___2UTg1 {\n        height: 25px; }\n      .add-comment__root___1D8oP form .add-comment__field___Ipw4N .add-comment__textarea___3Fj5S {\n        height: 150px;\n        resize: none; }\n      .add-comment__root___1D8oP form .add-comment__field___Ipw4N > *:not([type=hidden]) ~ * {\n        margin-left: 10px;\n        width: 100%; }\n      .add-comment__root___1D8oP form .add-comment__field___Ipw4N:not(:first-child) {\n        margin-top: 10px; }\n    .add-comment__root___1D8oP form .add-comment__input___2UTg1[type=submit] {\n      align-self: center;\n      margin-top: 30px;\n      width: 100px;\n      height: 35px; }\n", ""]);
+	
+	// exports
+	exports.locals = {
+		"root": "add-comment__root___1D8oP",
+		"field": "add-comment__field___Ipw4N",
+		"label": "add-comment__label___122hU",
+		"input": "add-comment__input___2UTg1",
+		"textarea": "add-comment__textarea___3Fj5S"
+	};
+
+/***/ },
+/* 7 */
+/*!******************************************************************!*\
+  !*** ./app/assets/components/react/display-comment/comment.scss ***!
+  \******************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(/*! !../../../../../~/css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../../../~/sass-loader/lib/loader.js!./comment.scss */ 8);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ../../../../../~/style-loader/addStyles.js */ 10)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../../../node_modules/sass-loader/lib/loader.js!./comment.scss", function() {
+				var newContent = require("!!../../../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../../../node_modules/sass-loader/lib/loader.js!./comment.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 8 */
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./~/css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./~/sass-loader/lib/loader.js!./app/assets/components/react/display-comment/comment.scss ***!
+  \*****************************************************************************************************************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(/*! ../../../../../~/css-loader/lib/css-base.js */ 13)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".comment__root___2yYsH {\n  display: -webkit-flex;\n  display: flex;\n  -webkit-flex-direction: row;\n  flex-direction: row;\n  flex-wrap: wrap;\n  align-items: stretch; }\n  .comment__root___2yYsH:not(:first-of-type) {\n    margin-top: 50px; }\n  .comment__root___2yYsH .comment__avatar___2cZ6w img {\n    border-radius: 50%;\n    width: 50px;\n    height: 50px;\n    margin: auto;\n    background-size: contain;\n    vertical-align: middle; }\n  .comment__root___2yYsH .comment__infos___V83Nv {\n    display: -webkit-flex;\n    display: flex;\n    -webkit-flex-direction: row;\n    flex-direction: row;\n    -webkit-flex-align-self: center;\n    -webkit-flex-justify-content: space-between;\n    justify-content: space-between;\n    align-items: center;\n    align-self: stretch;\n    padding: 0px 0px 0px 30px;\n    width: calc(100% - 50px);\n    font-weight: bold;\n    color: #fff;\n    pointer-events: none; }\n  .comment__root___2yYsH .comment__content___2c7UX {\n    margin-left: 80px;\n    width: calc(100% - 80px);\n    background: #fff;\n    color: black;\n    overflow: auto;\n    outline: none;\n    resize: none;\n    border: none;\n    pointer-events: none;\n    font-family: inherit;\n    font-size: inherit; }\n", ""]);
+	
+	// exports
+	exports.locals = {
+		"root": "comment__root___2yYsH",
+		"avatar": "comment__avatar___2cZ6w",
+		"infos": "comment__infos___V83Nv",
+		"content": "comment__content___2c7UX"
+	};
+
+/***/ },
+/* 9 */
 /*!***********************************************************!*\
   !*** ./~/react-textarea-autosize/lib/TextareaAutosize.js ***!
   \***********************************************************/
@@ -551,109 +656,6 @@
 	  }
 	}
 
-
-/***/ },
-/* 6 */
-/*!******************************************************************!*\
-  !*** ./app/assets/components/react/display-comment/comment.scss ***!
-  \******************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(/*! !../../../../../~/css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../../../~/sass-loader/lib/loader.js!./comment.scss */ 7);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(/*! ../../../../../~/style-loader/addStyles.js */ 10)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../../../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../../../node_modules/sass-loader/lib/loader.js!./comment.scss", function() {
-				var newContent = require("!!../../../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../../../node_modules/sass-loader/lib/loader.js!./comment.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 7 */
-/*!*****************************************************************************************************************************************************************************!*\
-  !*** ./~/css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./~/sass-loader/lib/loader.js!./app/assets/components/react/display-comment/comment.scss ***!
-  \*****************************************************************************************************************************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(/*! ../../../../../~/css-loader/lib/css-base.js */ 13)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".comment__root___2yYsH {\n  display: -webkit-flex;\n  display: flex;\n  -webkit-flex-direction: row;\n  flex-direction: row;\n  flex-wrap: wrap;\n  align-items: stretch;\n  margin: 15px; }\n  .comment__root___2yYsH:not(:first-of-type) {\n    margin-top: 50px; }\n  .comment__root___2yYsH .comment__avatar___2cZ6w img {\n    border-radius: 50%;\n    width: 50px;\n    height: 50px;\n    margin: auto;\n    background-size: contain;\n    vertical-align: middle; }\n  .comment__root___2yYsH .comment__infos___V83Nv {\n    display: -webkit-flex;\n    display: flex;\n    -webkit-flex-direction: row;\n    flex-direction: row;\n    -webkit-flex-align-self: center;\n    -webkit-flex-justify-content: space-between;\n    justify-content: space-between;\n    align-items: center;\n    align-self: stretch;\n    padding: 0px 0px 0px 30px;\n    width: calc(100% - 50px);\n    font-weight: bold;\n    color: #fff;\n    pointer-events: none; }\n  .comment__root___2yYsH .comment__content___2c7UX {\n    margin-left: 80px;\n    width: calc(100% - 80px);\n    background: #fff;\n    color: black;\n    overflow: auto;\n    outline: none;\n    resize: none;\n    border: none;\n    pointer-events: none;\n    font-family: inherit;\n    font-size: inherit; }\n", ""]);
-	
-	// exports
-	exports.locals = {
-		"root": "comment__root___2yYsH",
-		"avatar": "comment__avatar___2cZ6w",
-		"infos": "comment__infos___V83Nv",
-		"content": "comment__content___2c7UX"
-	};
-
-/***/ },
-/* 8 */
-/*!******************************************************************!*\
-  !*** ./app/assets/components/react/add-comment/add-comment.scss ***!
-  \******************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(/*! !../../../../../~/css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../../../~/sass-loader/lib/loader.js!./add-comment.scss */ 9);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(/*! ../../../../../~/style-loader/addStyles.js */ 10)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../../../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../../../node_modules/sass-loader/lib/loader.js!./add-comment.scss", function() {
-				var newContent = require("!!../../../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../../../node_modules/sass-loader/lib/loader.js!./add-comment.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 9 */
-/*!*****************************************************************************************************************************************************************************!*\
-  !*** ./~/css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./~/sass-loader/lib/loader.js!./app/assets/components/react/add-comment/add-comment.scss ***!
-  \*****************************************************************************************************************************************************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(/*! ../../../../../~/css-loader/lib/css-base.js */ 13)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".add-comment__root___1D8oP {\n  display: block;\n  background: var(--add-comment-background);\n  width: var(--add-comment-width);\n  padding: 15px; }\n  .add-comment__root___1D8oP form {\n    display: -webkit-flex;\n    /* Safari */\n    display: flex;\n    -webkit-flex-direction: column;\n    /* Safari */\n    flex-direction: column; }\n    .add-comment__root___1D8oP form .add-comment__field___Ipw4N {\n      display: -webkit-flex;\n      /* Safari */\n      display: flex;\n      -webkit-flex-direction: row;\n      /* Safari */\n      flex-direction: row;\n      -webkit-align-items: center;\n      /* Safari */\n      align-items: center; }\n      .add-comment__root___1D8oP form .add-comment__field___Ipw4N .add-comment__label___122hU {\n        width: 90px; }\n      .add-comment__root___1D8oP form .add-comment__field___Ipw4N .add-comment__input___2UTg1 {\n        height: 25px; }\n      .add-comment__root___1D8oP form .add-comment__field___Ipw4N .add-comment__textarea___3Fj5S {\n        height: 150px;\n        resize: none; }\n      .add-comment__root___1D8oP form .add-comment__field___Ipw4N > *:not([type=hidden]) ~ * {\n        margin-left: 10px;\n        width: 100%; }\n      .add-comment__root___1D8oP form .add-comment__field___Ipw4N:not(:first-child) {\n        margin-top: 10px; }\n    .add-comment__root___1D8oP form .add-comment__input___2UTg1[type=submit] {\n      align-self: center;\n      margin-top: 30px;\n      width: 100px;\n      height: 35px; }\n", ""]);
-	
-	// exports
-	exports.locals = {
-		"root": "add-comment__root___1D8oP",
-		"field": "add-comment__field___Ipw4N",
-		"label": "add-comment__label___122hU",
-		"input": "add-comment__input___2UTg1",
-		"textarea": "add-comment__textarea___3Fj5S"
-	};
 
 /***/ },
 /* 10 */
@@ -5313,6 +5315,54 @@
 	};
 	
 	module.exports = KeyEscapeUtils;
+
+/***/ },
+/* 47 */
+/*!***********************************************************************!*\
+  !*** ./app/assets/components/react/display-comment/comment-list.scss ***!
+  \***********************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(/*! !../../../../../~/css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../../../~/sass-loader/lib/loader.js!./comment-list.scss */ 48);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ../../../../../~/style-loader/addStyles.js */ 10)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../../../node_modules/sass-loader/lib/loader.js!./comment-list.scss", function() {
+				var newContent = require("!!../../../../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!../../../../../node_modules/sass-loader/lib/loader.js!./comment-list.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 48 */
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./~/css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./~/sass-loader/lib/loader.js!./app/assets/components/react/display-comment/comment-list.scss ***!
+  \**********************************************************************************************************************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(/*! ../../../../../~/css-loader/lib/css-base.js */ 13)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".comment-list__root___14ay7 {\n  display: block;\n  padding: 15px; }\n", ""]);
+	
+	// exports
+	exports.locals = {
+		"root": "comment-list__root___14ay7"
+	};
 
 /***/ }
 /******/ ])

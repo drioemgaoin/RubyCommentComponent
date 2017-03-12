@@ -1,6 +1,8 @@
 import Comment from './comment.es6.jsx'
+import css from "./comment-list"
 
-export default class DisplayComment extends React.Component {
+@styleable(css)
+export default class CommentList extends React.Component {
   constructor(props) {
     super(props);
 
@@ -56,8 +58,8 @@ export default class DisplayComment extends React.Component {
       return (<Comment key={comment.id} comment={comment} defaultAvatar={this.props.defaultAvatar} />)
     });
 
-    return(<div>{items}</div>)
+    return(<div className={css.root}>{items}</div>)
   }
 }
 
-window.DisplayComment = DisplayComment
+window.CommentList = CommentList
