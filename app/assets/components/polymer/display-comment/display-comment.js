@@ -43,8 +43,11 @@ Polymer({
       this.splice('comments', this.comments.indexOf(comment), 1);
     }
   },
+  _orderByAscDate: function(comment1, comment2) {
+    return new Date(comment1.created_at) - new Date(comment2.created_at);
+  },
   _response: function (data) {
-    this.comments = data.detail.response;
+    this.comments = data.detail.response.sort(this._orderByAscDate);
   },
   _format: function(date) {
     return moment(date).format(this.formatDate);

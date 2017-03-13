@@ -5,7 +5,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: stretch;
-  margin: 15px;
 
   &:not(:first-of-type) {
       margin-top: 50px;
@@ -41,7 +40,7 @@
       pointer-events: none;
   }
 
-  .body {
+  .content {
       margin-left: 80px;
       width: calc(100% - 80px);
       background: #fff;
@@ -49,6 +48,9 @@
       overflow: auto;
       outline: none;
       resize: none;
+      border: none;
       pointer-events: none;
+      font-family: inherit;
+      font-size: inherit;
   }
 }
